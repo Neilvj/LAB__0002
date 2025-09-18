@@ -1,0 +1,352 @@
+/* ===== ROOT VARIABLES ===== */
+/* Designa tokens för att bibehålla samma konsistens genom hela projektet. */
+
+:root {
+    /* Farger */
+    --bg-color: #dcd2ca;
+    --dark-text-color: #445844;
+    --light-bg-color: #f5f1ee;
+    --highlight-color: #a2b29f;
+    --accent-color: #8a9a7f;
+    --border-color: #c4bbae;
+
+    /* Fonts */
+    --heading-font: 'Times New Roman', Times, serif;
+    --body-font: Arial, Helvetica, sans-serif;
+    --nav-font: 'Times New Roman', Times, serif;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+
+    /* Border radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+
+    /* Skuggor */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Kontainer bredd */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+}
+
+/* GLOBAL STYLES */
+/* Basstilar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Rubrikstilar */
+h1 {
+    font-family: var(--heading-font);
+    font-weight: lighter;
+    color: var(--dark-text-color);
+}
+
+h2 {
+    font-family: var(--heading-font);
+    font-weight: bolder;
+    color: var(--dark-text-color);
+}
+
+/* Body stilar. */
+body {
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--dark-text-color);
+    line-height: 1.9;
+    scroll-behavior: smooth;
+}
+
+/* Länkstilar med svävande effekter */
+a {
+    color: var(--dark-text-color);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+a:hover {
+    color: var(--highlight-color);
+}
+
+/* HEADER & NAV */
+/* Huvudrubrik med ljus bakgrund */
+.main-header {
+    background-color: var(--light-bg-color);
+    color: var(--dark-text-color);
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+}
+
+/* Flex kontainar för logotyp och webbplatsens titel*/
+.header-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+/* Styling av logotyp */
+.logo {
+    height: 90px;
+    width: auto;
+}
+
+/* Webbplatsens titel */
+.site-title {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Huvudnavigeringsstil */
+.main-nav {
+    font-family: var(--nav-font);
+    font-weight: bold;
+    background-color: var(--bg-color);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-md);
+}
+
+/* Navigationslista med flex layout */
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+/* Navigeringslänkar med hover effekter. */
+.nav-link {
+    font-family: var(--nav-font);
+    font-size: 1.1rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    transition: background-color var(--transition-normal);
+    color: var(--dark-text-color);
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    background-color: var(--bg-color);
+    color: var(--dark-text-color);
+}
+
+/* Första navigeringsobjektets styling. */
+.main-nav .nav-list li:first-child .nav-link {
+    font-weight: bold;
+    color: var(--dark-text-color);
+}
+
+/* PAGE SECTIONS */
+/* Sektion padding */
+.page-section {
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+/* Sektionsrubrik styling */
+.section-heading {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--dark-text-color);
+    margin-top: calc(var(--spacing-sm) * -1);
+}
+
+/* Tillbaka knappen*/
+/* Styling för navigering tillbaka knapp */
+.back-button {
+    display: inline-block;
+    margin: var(--spacing-md) 0 0 var(--spacing-lg);
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-text-color);
+}
+
+.back-button:hover {
+    color: var(--highlight-color);
+}
+
+/* --Välkoms delen -- */
+
+/* Layout för välkomstinnehåll */
+.welcome-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+/* Styling av välkomstbild */
+.welcome-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Avsnitt för tjänster*/
+/* Servicecontainer med flex layout. */
+.service-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+/* Styling av individuell servicekort*/
+.service-card {
+    background-color: var(--light-bg-color);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    text-align: left;
+    transform: translateY(-20px);
+}
+
+/* Stilisering av tjänstens titel */
+.service-title {
+    font-family: var(--heading-font);
+    color: var(--dark-text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Kontakt Sektion*/
+/* Layout för kontaktinnehåll */
+.contact-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+/* Bokningsknapp*/
+/* Primary button styling */
+.booking-button {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background-color: var(--dark-text-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color var(--transition-normal);
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    font-weight: bold;
+}
+
+.booking-button:hover {
+    background-color: var(--highlight-color);
+    color: white;
+}
+
+/* Footer*/
+/*Footer styling */
+.site-footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--light-bg-color);
+    font-size: 0.9rem;
+}
+
+/* Responsiv Design */
+/* Brytpunkter för surfplattor och stationära datorer */
+@media (min-width: 768px) {
+    .site-title {
+        font-size: 3.5rem;
+    }
+
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--spacing-lg) var(--spacing-xl);
+    }
+
+    /* Desktop header justering. */
+    .header-brand {
+        justify-content: flex-start;
+    }
+
+    .main-nav {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .nav-list {
+        gap: var(--spacing-xxl);
+    }
+
+    .nav-link {
+        border: none;
+    }
+
+    .nav-link:hover {
+        background-color: transparent;
+        color: var(--highlight-color);
+    }
+
+    .back-button {
+        margin-left: var(--spacing-xl);
+    }
+
+    /* Layout för välkomstsektionen på skrivbordet */
+    .welcome-content {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var(--spacing-xl);
+        text-align: left;
+    }
+
+    .welcome-image {
+        width: auto;
+        max-width: 300px;
+        flex-shrink: 0;
+        transform: translateY(-10px);
+    }
+
+    .welcome-text-container {
+        flex: 1;
+    }
+
+    /* Desktop layout */
+    .service-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--spacing-xl);
+    }
+
+    .service-card {
+        flex: 1;
+        max-width: 40%;
+    }
+}
